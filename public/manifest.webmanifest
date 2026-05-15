@@ -1,0 +1,24 @@
+{
+  "name": "e-Arabicquran — কুরআনের ভাষা শিখুন",
+  "short_name": "e-Arabicquran",
+  "description": "engineerstechbd.com-এর ফ্রি অ্যাপ — বাংলা ভাষায় কুরআন ভিত্তিক আরবি শেখার পূর্ণাঙ্গ মোবাইল অভিজ্ঞতা।",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#faf8f5",
+  "theme_color": "#8b7355",
+  "lang": "bn",
+  "dir": "ltr",
+  "categories": ["education", "books", "lifestyle"],
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" },
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ],
+  "shortcuts": [
+    { "name": "আজকের পাঠ", "short_name": "আজ", "url": "/today", "description": "আজকের ছোট লক্ষ্য" },
+    { "name": "ফ্ল্যাশকার্ড", "short_name": "কার্ড", "url": "/flashcards" },
+    { "name": "কুইজ", "short_name": "কুইজ", "url": "/quiz" }
+  ]
+}

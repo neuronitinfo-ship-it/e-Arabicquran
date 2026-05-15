@@ -1,0 +1,120 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Fonts: Instrument Serif (headings), Work Sans (body), Amiri/Scheherazade (Arabic), Noto Sans Bengali (Bangla) */
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@300;400;500;600;700&family=Amiri:wght@400;700&family=Scheherazade+New:wght@400;700&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap");
+
+@theme inline {
+  --font-serif: "Instrument Serif", ui-serif, Georgia, serif;
+  --font-sans: "Work Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-arabic: "Amiri", "Scheherazade New", serif;
+  --font-bangla: "Noto Sans Bengali", "Work Sans", sans-serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-sand: var(--sand);
+  --color-clay: var(--clay);
+  --color-ink: var(--ink);
+}
+
+:root {
+  --radius: 0.75rem;
+
+  /* Warm Sand palette */
+  --background: oklch(0.985 0.008 85);     /* #faf8f5 */
+  --foreground: oklch(0.28 0.025 60);      /* deep ink */
+  --card: oklch(0.975 0.012 82);
+  --card-foreground: oklch(0.28 0.025 60);
+  --popover: oklch(0.985 0.008 85);
+  --popover-foreground: oklch(0.28 0.025 60);
+
+  --primary: oklch(0.45 0.045 60);         /* #8b7355 clay */
+  --primary-foreground: oklch(0.985 0.008 85);
+  --secondary: oklch(0.93 0.018 82);       /* #f0ebe3 */
+  --secondary-foreground: oklch(0.32 0.03 60);
+  --muted: oklch(0.93 0.018 82);
+  --muted-foreground: oklch(0.5 0.025 65);
+  --accent: oklch(0.78 0.045 75);          /* #c9b99a sand */
+  --accent-foreground: oklch(0.28 0.025 60);
+
+  --destructive: oklch(0.55 0.18 28);
+  --destructive-foreground: oklch(0.985 0.008 85);
+
+  --border: oklch(0.88 0.02 80);
+  --input: oklch(0.9 0.02 80);
+  --ring: oklch(0.55 0.05 60);
+
+  --sand: oklch(0.78 0.045 75);
+  --clay: oklch(0.45 0.045 60);
+  --ink: oklch(0.22 0.02 60);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html, body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+
+  .font-arabic {
+    font-family: var(--font-arabic);
+    direction: rtl;
+    line-height: 1.8;
+  }
+
+  .font-bangla {
+    font-family: var(--font-bangla);
+  }
+}
+
+@utility paper-card {
+  background: linear-gradient(180deg, oklch(0.98 0.01 82) 0%, oklch(0.96 0.014 82) 100%);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 1px 0 oklch(1 0 0 / 0.6) inset, 0 8px 24px -16px oklch(0.3 0.03 60 / 0.18);
+}
+
+@utility ornament-divider {
+  background-image: radial-gradient(circle, var(--color-accent) 1px, transparent 1.5px);
+  background-size: 14px 100%;
+  background-repeat: repeat-x;
+  background-position: center;
+  height: 12px;
+}
